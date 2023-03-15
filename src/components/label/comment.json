@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_label_comments",
+  "info": {
+    "displayName": "Comment"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

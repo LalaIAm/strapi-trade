@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_label_tags",
+  "info": {
+    "displayName": "Tag"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "listings",
+  "info": {
+    "singularName": "listing",
+    "pluralName": "listings",
+    "displayName": "Listing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "listings"
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.location"
+    },
+    "condition": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "excellent",
+        "good",
+        "okay"
+      ]
+    },
+    "cover": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "listings"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "label.tag"
+    },
+    "Comment": {
+      "displayName": "Comment",
+      "type": "component",
+      "repeatable": true,
+      "component": "label.comment"
+    }
+  }
+}
